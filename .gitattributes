@@ -1,0 +1,25 @@
+# 行尾与二进制纪律。
+#
+# 为什么这个仓库需要它：git 默认会在 Windows 上做 CRLF 转换，而本仓库有两类
+# "字节必须稳定"的文件，任何改写都是真问题：
+#
+#   ① LICENSE.txt —— OFL 条件 2 要求随每份副本附上"这份"版权声明与许可。
+#      它必须逐字节等于上游原件（sha256 D45891F8ADFD21368C98E803603DF1F575FF3FC4A6EC713BA7CCF0E3CBA15B28），
+#      行尾被改就不再是同一份文件。
+#   ② woff2 / ttf —— 字体二进制。一旦被当文本做 EOL 转换，文件直接损坏，
+#      而浏览器的表现是**静默回落系统字体**，不报错。
+
+# ── 字体二进制：不做任何文本处理 ──
+*.woff2  binary
+*.ttf    binary
+*.otf    binary
+
+# ── 许可证：保持仓库里的原始字节，检出时不转换行尾 ──
+LICENSE.txt  -text
+
+# ── 其余文本统一 LF（本仓库所有文本本来就是 LF）──
+*.md        text eol=lf
+*.css       text eol=lf
+*.js        text eol=lf
+*.json      text eol=lf
+.gitignore  text eol=lf
