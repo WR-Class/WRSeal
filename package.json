@@ -1,0 +1,32 @@
+{
+  "name": "wrseal",
+  "version": "1.0.0",
+  "description": "中文圆体 webfont：寒蝉全圆体 ChillRoundF v3.200 的 OFL-1.1 合规子集化改名版（家族名 WRSeal）。266 片按 unicode-range 预切分，Regular 400 / Bold 700，可自托管、不依赖任何 CDN。",
+  "license": "OFL-1.1",
+  "files": [
+    "dist",
+    "LICENSE.txt",
+    "README.md"
+  ],
+  "sideEffects": [
+    "*.css"
+  ],
+  "keywords": [
+    "font",
+    "webfont",
+    "chinese",
+    "cjk",
+    "rounded",
+    "woff2",
+    "self-hosted",
+    "unicoderange",
+    "ofl"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WR-Class/WRSeal.git"
+  },
+  "scripts": {
+    "verify": "node tools/verify.js"
+  }
+}
